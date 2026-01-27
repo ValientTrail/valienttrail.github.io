@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Dev Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #007BA7;
+            --secondary-blue: #001F3F;
+            --light-bg: #f5f7fa;
+            --white: #ffffff;
+            --text-dark: #1a1a1a;
+            --text-light: #555555;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--light-bg);
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--secondary-blue);
+            color: var(--white);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: var(--white);
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 4rem 0;
+            border-bottom: 1px solid rgba(0,123,167,0.1);
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--secondary-blue);
+            text-align: center;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .about-image {
+            background-color: var(--primary-blue);
+            height: 300px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 4px solid var(--primary-blue);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,123,167,0.2);
+        }
+
+        .skill-card h3 {
+            color: var(--secondary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Projects Section */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .project-image {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            color: var(--secondary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-content p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .project-status {
+            display: inline-block;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .status-current {
+            background-color: #e8f4f8;
+            color: var(--primary-blue);
+        }
+
+        .status-past {
+            background-color: #f0f0f0;
+            color: var(--text-light);
+        }
+
+        /* Gallery Section */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            cursor: pointer;
+            transition: transform 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: bold;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">GAME DEV</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#current">Current Project</a></li>
+                <li><a href="#past">Past Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Game Developer Portfolio</h1>
+        <p>Creating immersive experiences through code and creativity</p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Passionate Game Developer</h3>
+                    <p>I'm a dedicated game developer with a passion for creating engaging and interactive experiences. With expertise in multiple game engines and a strong foundation in both programming and visual design, I bring ideas to life.</p>
+                    <p>My journey in game development has equipped me with the skills to work across different platforms and technologies, always pushing the boundaries of creativity and technical excellence.</p>
+                    <p>Whether it's crafting pixel-perfect art or architecting complex game systems, I'm committed to delivering quality projects that resonate with players.</p>
+                </div>
+                <div class="about-image">
+                    [Your Profile Image Here]
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Project Section -->
+    <section id="current">
+        <div class="container">
+            <h2>Current Project</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <div class="project-image">[Project Screenshot]</div>
+                    <div class="project-content">
+                        <h3>Project Title</h3>
+                        <p class="project-status status-current">In Development</p>
+                        <p>A brief description of your current project. Highlight the key features, technology stack, and what makes it unique.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Past Projects Section -->
+    <section id="past">
+        <div class="container">
+            <h2>Past Projects</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <div class="project-image">[Project Screenshot]</div>
+                    <div class="project-content">
+                        <h3>Past Project 1</h3>
+                        <p class="project-status status-past">Completed</p>
+                        <p>Description of your first completed project. Share the challenges you overcame and what you learned from this experience.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">[Project Screenshot]</div>
+                    <div class="project-content">
+                        <h3>Past Project 2</h3>
+                        <p class="project-status status-past">Completed</p>
+                        <p>Description of your second completed project. Highlight the technologies used and impact of the project.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">[Project Screenshot]</div>
+                    <div class="project-content">
+                        <h3>Past Project 3</h3>
+                        <p class="project-status status-past">Completed</p>
+                        <p>Description of your third completed project. Include your role and key contributions to the project.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2>My Skillset</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Programming</h3>
+                    <p>Proficient in multiple programming languages including C#, C++, and more. Strong understanding of game architecture and software design patterns.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Pixel Art</h3>
+                    <p>Creating detailed and vibrant pixel art assets. Experienced in sprite animation and tile-based game graphics design.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Unity</h3>
+                    <p>Extensive experience with the Unity game engine. Skilled in 2D/3D game development, UI design, and performance optimization.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Unreal Engine</h3>
+                    <p>Proficient in Unreal Engine development. Experience with Blueprints, C++ scripting, and advanced rendering techniques.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="container">
+            <h2>Photo Gallery</h2>
+            <div class="gallery">
+                <div class="gallery-item">Screenshot 1</div>
+                <div class="gallery-item">Screenshot 2</div>
+                <div class="gallery-item">Concept Art 1</div>
+                <div class="gallery-item">Concept Art 2</div>
+                <div class="gallery-item">Pixel Art 1</div>
+                <div class="gallery-item">Pixel Art 2</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Game Dev Portfolio. All rights reserved.</p>
+        <p>Let's create something amazing together!</p>
+    </footer>
+</body>
+</html>
