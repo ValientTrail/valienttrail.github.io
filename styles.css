@@ -13,6 +13,16 @@
     --text-light: #555555;
 }
 
+/* Dark Mode Colors */
+[data-theme="dark"] {
+    --primary-blue: #007BA7;
+    --secondary-blue: #001F3F;
+    --light-bg: #1a1a1a;
+    --white: #e0e0e0;
+    --text-dark: #e0e0e0;
+    --text-light: #b0b0b0;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
@@ -59,6 +69,23 @@ nav a {
 
 nav a:hover {
     color: var(--primary-blue);
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    background: none;
+    border: 2px solid var(--white);
+    color: var(--white);
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.theme-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
 }
 
 /* Hero Section */
@@ -143,8 +170,9 @@ section h2 {
     border-radius: 10px;
     text-align: center;
     border-left: 4px solid var(--primary-blue);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     transition: transform 0.3s, box-shadow 0.3s;
+    color: var(--text-dark);
 }
 
 .skill-card:hover {
@@ -169,6 +197,7 @@ section h2 {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    color: var(--text-dark);
     transition: transform 0.3s;
 }
 
