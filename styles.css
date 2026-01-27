@@ -16,7 +16,7 @@
 /* Dark Mode Colors */
 [data-theme="dark"] {
     --primary-blue: #007BA7;
-    --secondary-blue: #001F3F;
+    --secondary-blue: #00A8E8;
     --light-bg: #1a1a1a;
     --white: #e0e0e0;
     --text-dark: #e0e0e0;
@@ -183,6 +183,10 @@ section h2 {
 .skill-card h3 {
     color: var(--secondary-blue);
     margin-bottom: 0.5rem;
+}
+
+.skill-card p {
+    color: var(--secondary-blue);
 }
 
 /* Projects Section */
