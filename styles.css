@@ -303,6 +303,53 @@ footer p {
     margin-bottom: 0.5rem;
 }
 
+/* Contact Section */
+.contact-content {
+    text-align: center;
+}
+
+.contact-content p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: var(--text-light);
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,123,167,0.3);
+}
+
+.contact-icon {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+.contact-icon-text {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     nav ul {
