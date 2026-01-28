@@ -30,6 +30,35 @@ body {
     background-color: var(--light-bg);
 }
 
+/* Temporary: force safe responsive image sizing for preview (no commit requested)
+   Ensures images retain aspect ratio and containers don't crop them. */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project-image, .about-image {
+    /* let the image define the height; avoid fixed/min heights that crop */
+    min-height: 0;
+    height: auto;
+    padding: 0.5rem;
+}
+
+.project-image img,
+.about-image img {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Ensure contact icon stays small */
+.contact-icon { width: 20px; height: 20px; }
+
 /* Header & Navigation */
 header {
     background-color: var(--secondary-blue);
@@ -59,6 +88,12 @@ nav ul {
     list-style: none;
     display: flex;
     gap: 2rem;
+    align-items: center;
+}
+
+nav ul li {
+    display: flex;
+    align-items: center;
 }
 
 /* Divider between nav items */
@@ -99,6 +134,8 @@ nav a {
     color: var(--white);
     text-decoration: none;
     transition: color 0.3s;
+    display: flex;
+    align-items: center;
 }
 
 nav a:hover {
