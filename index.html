@@ -13,7 +13,7 @@
             <div class="logo">Raymond Zegles</div>
             <ul>
                 <li><a href="#about">About</a></li>
-                <li><a href="#current">Current Project</a></li>
+                <li><a href="#current">Current Projects</a></li>
                 <li><a href="#past">Past Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#gallery">Gallery</a></li>
@@ -36,13 +36,18 @@
             <div class="about-content">
                 <div class="about-text">
                     <h3>Passionate Game Developer</h3>
-                    <p>Hi, I'm Raymond Zegles, a dedicated game developer with a passion for creating engaging and interactive experiences. With expertise in multiple game engines and a good foundation in both programming and visual design, I bring ideas to life.</p>
-                    <p>My journey in game development has equipped me with the skills to work across different platforms and technologies, always pushing the boundaries of creativity and technical excellence.</p>
-                    <p>Whether it's crafting pixel-perfect art or architecting complex game systems, I'm committed to delivering quality projects that resonate with players.</p>
+                    <p>My name is Raymond Zegles, a game programmer and pixel artist focused on crafting engaging game mechanics. My journey into gaming began at 13 with Command & Conquer Generals: Zero Hour and Star Wars: Empire at War: Forces of Corruption, experiences that sparked my passion for it. 
+                        I discovered game development in college and have since built experience with Unity, Unreal Engine 5, and pixel art creation in Aseprite. With a strong foundation in C++ and C#, and currently expanding my skills in Python, I bring both technical expertise and collaborative energy to team projects. 
+                        Whether programming systems or creating pixel art assets, I'm driven by the challenge of bringing gameplay ideas to life.</p>
                 </div>
                 <div class="about-image">
                     <img src="images/Raymond_Z_Profile.jpg" alt="Raymond Zegles Profile Photo">
                 </div>
+            </div>
+            <div class="audio-player">
+                <button class="play-pause-btn aboutPlayPauseBtn">▶</button>
+                <input type="range" class="volume-slider aboutVolumeSlider" min="0" max="100" value="70">
+                <audio id="bgAudio" src="sounds/pixelate-pixelated-dreams-313358.mp3" preload="auto"></audio>
             </div>
         </div>
     </section>
@@ -50,7 +55,7 @@
     <!-- Current Project Section -->
     <section id="current">
         <div class="container">
-            <h2>Current Project</h2>
+            <h2>Current Projects</h2>
             <div class="projects-container">
                 <div class="project-card">
                     <div class="project-image">[Project Screenshot]</div>
@@ -58,6 +63,16 @@
                         <h3>Project Title</h3>
                         <p class="project-status status-current">In Development</p>
                         <p>A brief description of your current project. Highlight the key features, technology stack, and what makes it unique.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/ZDefend_Title_Screen.png" alt="ZDefend Title Screen">
+                    </div>
+                    <div class="project-content">
+                        <h3>ZDefend</h3>
+                        <p class="project-status status-current">In Development</p>
+                        <p>A challenging 2D tower defense shooter experience with strategic gameplay elements and dynamic mechanics.</p>
                     </div>
                 </div>
             </div>
@@ -70,27 +85,16 @@
             <h2>Past Projects</h2>
             <div class="projects-container">
                 <div class="project-card">
-                    <div class="project-image">[Project Screenshot]</div>
-                    <div class="project-content">
-                        <h3>Past Project 1</h3>
-                        <p class="project-status status-past">Completed</p>
-                        <p>Description of your first completed project. Share the challenges you overcame and what you learned from this experience.</p>
+                    <div class="project-image">
+                        <img src="images/MONSTER_title_screen.png" alt="MONSTER Title Screen">
                     </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">[Project Screenshot]</div>
                     <div class="project-content">
-                        <h3>Past Project 2</h3>
+                        <h3>MONSTER!</h3>
                         <p class="project-status status-past">Completed</p>
-                        <p>Description of your second completed project. Highlight the technologies used and impact of the project.</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">[Project Screenshot]</div>
-                    <div class="project-content">
-                        <h3>Past Project 3</h3>
-                        <p class="project-status status-past">Completed</p>
-                        <p>Description of your third completed project. Include your role and key contributions to the project.</p>
+                        <p>I worked with 3 other extremely talented UMBC students to create MONSTER, a retro arcade horror game about an arcade collector finding a totally normal arcade machine and playing it, 
+                            in 24 hours at hackUMBC. I created the character sprites for the monster and humans, as well as worked on the UI sprites for this game. 
+                            A rewarding experience developing sprite assets that brought the game world to life.</p>
+                        <a href="https://devpost.com/software/monster-x584t7" target="_blank" rel="noopener noreferrer" class="project-button">View on DevPost</a>
                     </div>
                 </div>
             </div>
@@ -108,11 +112,11 @@
                 </div>
                 <div class="skill-card">
                     <h3>Pixel Art</h3>
-                    <p>Creating detailed and vibrant pixel art assets. Experienced in sprite animation and tile-based game graphics design.</p>
+                    <p>Creating vibrant pixel art assets. Experienced in sprite animation using skeletons and small tilesets.</p>
                 </div>
                 <div class="skill-card">
                     <h3>Unity</h3>
-                    <p>Proficient with the Unity game engine. Skilled in 2D game development, UI design, and performance optimization.</p>
+                    <p>Proficient with the Unity game engine. Versed in 2D game development, UI design, and performance optimization.</p>
                 </div>
                 <div class="skill-card">
                     <h3>Unreal Engine</h3>

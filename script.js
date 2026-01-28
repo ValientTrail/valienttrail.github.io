@@ -1,11 +1,52 @@
 // Portfolio JavaScript
 
+// Audio Player functionality
+const aboutAudio = document.getElementById('bgAudio');
+const aboutPlayPauseBtn = document.querySelector('.aboutPlayPauseBtn');
+const aboutVolumeSlider = document.querySelector('.aboutVolumeSlider');
+
+// Set initial volume
+if (aboutAudio) {
+    aboutAudio.volume = 0.7;
+}
+
+// About section play/pause button
+if (aboutPlayPauseBtn) {
+    aboutPlayPauseBtn.addEventListener('click', () => {
+        if (aboutAudio) {
+            if (aboutAudio.paused) {
+                aboutAudio.play().catch(err => console.log('Playback failed:', err));
+                aboutPlayPauseBtn.textContent = '⏸';
+            } else {
+                aboutAudio.pause();
+                aboutPlayPauseBtn.textContent = '▶';
+            }
+        }
+    });
+}
+
+// About section volume slider
+if (aboutVolumeSlider) {
+    aboutVolumeSlider.addEventListener('input', (e) => {
+        if (aboutAudio) {
+            aboutAudio.volume = e.target.value / 100;
+        }
+    });
+}
+
+// Reset play button when audio ends
+if (aboutAudio) {
+    aboutAudio.addEventListener('ended', () => {
+        if (aboutPlayPauseBtn) aboutPlayPauseBtn.textContent = '▶';
+    });
+}
+
 // Theme Toggle functionality
 const themeToggle = document.getElementById('themeToggle');
 const html = document.documentElement;
 
-// Check for saved theme preference or default to 'light'
-const currentTheme = localStorage.getItem('theme') || 'light';
+// Check for saved theme preference or default to 'dark'
+const currentTheme = localStorage.getItem('theme') || 'dark';
 html.setAttribute('data-theme', currentTheme);
 updateThemeToggleText(currentTheme);
 
