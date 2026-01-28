@@ -61,6 +61,40 @@ nav ul {
     gap: 2rem;
 }
 
+/* Divider between nav items */
+nav ul li + li {
+    /* keep spacing handled by pseudo-element */
+    padding-left: 0;
+    margin-left: 0;
+}
+
+/* centered vertical divider using pseudo-element on following li */
+nav ul li + li::before {
+    content: "";
+    display: inline-block;
+    width: 2px;
+    height: 20px;
+    background: rgba(255,255,255,0.22);
+    margin: 0 12px 0 12px;
+    vertical-align: middle;
+}
+
+/* divider before first nav item (between logo and first link) */
+nav ul li:first-child::before {
+    content: "";
+    display: inline-block;
+    width: 2px;
+    height: 20px;
+    background: rgba(255,255,255,0.22);
+    margin: 0 12px 0 12px;
+    vertical-align: middle;
+}
+
+/* hide divider for the theme toggle button (last li) */
+nav ul li:last-child::before {
+    display: none;
+}
+
 nav a {
     color: var(--white);
     text-decoration: none;
