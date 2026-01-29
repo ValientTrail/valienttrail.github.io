@@ -166,6 +166,7 @@ nav ul {
     gap: 2rem;
     align-items: center;
     flex-wrap: nowrap;
+    margin-left: 1.5rem;
 }
 
 nav ul li {
