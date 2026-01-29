@@ -3,30 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raymond Zegles - Game Dev Portfolio</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" charset="utf-8">
+    <meta name="description" content="Raymond Zegles - Game Developer Portfolio. Specializing in game programming, pixel art, and game engine development.">
+    <meta name="author" content="Raymond Zegles">
+    <title>Raymond Zegles - Game Developer Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
     <!-- Header -->
-    <header>
-        <nav class="container">
-            <div class="logo">Raymond Zegles</div>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#current">Current Projects</a></li>
-                <li><a href="#past">Past Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><button class="theme-toggle" id="themeToggle">🌙 Dark</button></li>
+    <header role="banner">
+        <nav class="container" aria-label="Main navigation">
+            <div class="logo" aria-label="Raymond Zegles - Game Developer">
+                <img src="images/RZ_Icon.png" alt="RZ Icon" class="logo-icon">
+                <span>Raymond Zegles</span>
+            </div>
+            <ul role="menubar">
+                <li role="none"><a href="#about" role="menuitem">About</a></li>
+                <li role="none"><a href="#current" role="menuitem">Current Projects</a></li>
+                <li role="none"><a href="#past" role="menuitem">Past Projects</a></li>
+                <li role="none"><a href="#skills" role="menuitem">Skills</a></li>
+                <li role="none"><a href="#gallery" role="menuitem">Gallery</a></li>
+                <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
+                <li role="none"><button class="theme-toggle" id="themeToggle" aria-label="Toggle dark and light theme" aria-pressed="true">🌙 Dark</button></li>
             </ul>
         </nav>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1>Game Developer Portfolio</h1>
-        <p>Creating immersive experiences through code and creativity</p>
+        <div class="container">
+            <h1>Aspiring Game Developer</h1>
+            <p>Creating amazing experiences through code and creativity</p>
+        </div>
     </section>
 
     <!-- About Section -->
@@ -44,10 +51,10 @@
                     <img src="images/Raymond_Z_Profile.jpg" alt="Raymond Zegles Profile Photo">
                 </div>
             </div>
-            <div class="audio-player">
-                <button class="play-pause-btn aboutPlayPauseBtn">▶</button>
-                <input type="range" class="volume-slider aboutVolumeSlider" min="0" max="100" value="70">
-                <audio id="bgAudio" src="sounds/pixelate-pixelated-dreams-313358.mp3" preload="auto"></audio>
+            <div class="audio-player" role="region" aria-label="Background music player">
+                <button class="play-pause-btn aboutPlayPauseBtn" aria-label="Play background music" aria-pressed="false">▶</button>
+                <input type="range" class="volume-slider aboutVolumeSlider" min="0" max="100" value="70" aria-label="Volume control" aria-valuemin="0" aria-valuemax="100" aria-valuenow="70" aria-valuetext="70%">
+                <audio id="bgAudio" src="sounds/pixelate-pixelated-dreams-313358.mp3" preload="auto" aria-label="Ambient background music"></audio>
             </div>
         </div>
     </section>
@@ -56,16 +63,8 @@
     <section id="current">
         <div class="container">
             <h2>Current Projects</h2>
-            <div class="projects-container">
-                <div class="project-card">
-                    <div class="project-image">[Project Screenshot]</div>
-                    <div class="project-content">
-                        <h3>Project Title</h3>
-                        <p class="project-status status-current">In Development</p>
-                        <p>A brief description of your current project. Highlight the key features, technology stack, and what makes it unique.</p>
-                    </div>
-                </div>
-                <div class="project-card">
+            <div class="projects-container" role="region" aria-label="Current projects showcase\">
+                <article class=\"project-card\" role=\"article\">
                     <div class="project-image">
                         <img src="images/ZDefend_Title_Screen.png" alt="ZDefend Title Screen">
                     </div>
@@ -74,7 +73,17 @@
                         <p class="project-status status-current">In Development</p>
                         <p>A challenging 2D tower defense shooter experience with strategic gameplay elements and dynamic mechanics.</p>
                     </div>
-                </div>
+                </article>
+                <article class="project-card" role="article">
+                    <div class="project-image">
+                        <img src="images/MONSTER_title_screen.png" alt="Another Project Teaser">
+                    </div>
+                    <div class="project-content">
+                        <h3>Upcoming Project</h3>
+                        <p class="project-status status-current">In Development</p>
+                        <p>Stay tuned for more exciting game development projects. Working on innovative gameplay mechanics and immersive experiences.</p>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
@@ -83,8 +92,8 @@
     <section id="past">
         <div class="container">
             <h2>Past Projects</h2>
-            <div class="projects-container">
-                <div class="project-card">
+            <div class="projects-container" role="region" aria-label="Past completed projects">
+                <article class="project-card" role="article">
                     <div class="project-image">
                         <img src="images/MONSTER_title_screen.png" alt="MONSTER Title Screen">
                     </div>
@@ -94,9 +103,9 @@
                         <p>I worked with 3 other extremely talented UMBC students to create MONSTER, a retro arcade horror game about an arcade collector finding a totally normal arcade machine and playing it, 
                             in 24 hours at hackUMBC. I created the character sprites for the monster and humans, as well as worked on the UI sprites for this game. 
                             A rewarding experience developing sprite assets that brought the game world to life.</p>
-                        <a href="https://devpost.com/software/monster-x584t7" target="_blank" rel="noopener noreferrer" class="project-button">View on DevPost</a>
+                        <a href="https://devpost.com/software/monster-x584t7" target="_blank" rel="noopener noreferrer" class="project-button" aria-label="View MONSTER project on DevPost (opens in new window)">View on DevPost</a>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
     </section>
@@ -105,23 +114,23 @@
     <section id="skills">
         <div class="container">
             <h2>My Skillset</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
+            <div class="skills-grid" role="region" aria-label="Professional skills and expertise">
+                <article class="skill-card" role="article">
                     <h3>Programming</h3>
                     <p>Proficient in multiple programming languages including C#, C++, and more. Good understanding of game architecture and software design patterns.</p>
-                </div>
-                <div class="skill-card">
+                </article>
+                <article class="skill-card" role="article">
                     <h3>Pixel Art</h3>
                     <p>Creating vibrant pixel art assets. Experienced in sprite animation using skeletons and small tilesets.</p>
-                </div>
-                <div class="skill-card">
+                </article>
+                <article class="skill-card" role="article">
                     <h3>Unity</h3>
                     <p>Proficient with the Unity game engine. Versed in 2D game development, UI design, and performance optimization.</p>
-                </div>
-                <div class="skill-card">
+                </article>
+                <article class="skill-card" role="article">
                     <h3>Unreal Engine</h3>
                     <p>Proficient in Unreal Engine development. Experience with Blueprints, C++ scripting, and advanced rendering techniques.</p>
-                </div>
+                </article>
             </div>
         </div>
     </section>
@@ -130,13 +139,15 @@
     <section id="gallery">
         <div class="container">
             <h2>Photo Gallery</h2>
-            <div class="gallery">
-                <div class="gallery-item">Screenshot 1</div>
-                <div class="gallery-item">Screenshot 2</div>
-                <div class="gallery-item">Concept Art 1</div>
-                <div class="gallery-item">Concept Art 2</div>
-                <div class="gallery-item">Pixel Art 1</div>
-                <div class="gallery-item">Pixel Art 2</div>
+            <div class="gallery" role="region" aria-label="Portfolio gallery of screenshots and artwork">
+                <figure class="gallery-item" role="img" aria-label="Screenshot 1">Screenshot 1</figure>
+                <figure class="gallery-item" role="img" aria-label="Screenshot 2">Screenshot 2</figure>
+                <figure class="gallery-item" role="img" aria-label="Concept Art 1">Concept Art 1</figure>
+                <figure class="gallery-item" role="img" aria-label="Concept Art 2">Concept Art 2</figure>
+                <figure class="gallery-item gallery-item-large" role="img" aria-label="Soldier Pixel Art Animation">
+                    <img src="images/Soldier_Pistol_Idle.gif" alt="Soldier with pistol idle animation" class="gallery-image-enlarged">
+                </figure>
+                <figure class="gallery-item" role="img" aria-label="Pixel Art 2">Pixel Art 2</figure>
             </div>
         </div>
     </section>
@@ -147,14 +158,75 @@
             <h2>Get In Touch</h2>
             <div class="contact-content">
                 <p>Let's connect and discuss your next game development project!</p>
-                <div class="contact-links">
-                    <a href="mailto:rzwork17@gmail.com" class="contact-link">
-                        <span class="contact-icon-text">✉</span>
+                
+                <!-- Contact Form -->
+                <form id="contactForm" class="contact-form" aria-label="Contact form">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="from_name" 
+                            required 
+                            aria-required="true"
+                            aria-label="Your full name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="from_email" 
+                            required 
+                            aria-required="true"
+                            aria-label="Your email address">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input 
+                            type="text" 
+                            id="subject" 
+                            name="subject" 
+                            required 
+                            aria-required="true"
+                            aria-label="Email subject">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea 
+                            id="message" 
+                            name="message" 
+                            rows="6" 
+                            required 
+                            aria-required="true"
+                            aria-label="Your message"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn" aria-label="Send contact form">
+                        <span class="btn-text">Send Message</span>
+                        <span class="btn-loading" style="display: none;">
+                            <span class="spinner"></span> Sending...
+                        </span>
+                    </button>
+                    <div id="formStatus" class="form-status" role="status" aria-live="polite" aria-atomic="true"></div>
+                </form>
+                
+                <!-- Quick Contact Links -->
+                <div class="contact-links" role="list">
+                    <a href="mailto:rzwork17@gmail.com" class="contact-link" role="listitem" aria-label="Send email to Raymond Zegles">
+                        <span class="contact-icon-text" aria-hidden="true">✉</span>
                         <span>Email</span>
                     </a>
-                    <a href="https://www.linkedin.com/in/raymond-d-zegles" target="_blank" rel="noopener noreferrer" class="contact-link">
-                        <img src="images/linkedin-icon.png" alt="LinkedIn" class="contact-icon">
+                    <a href="https://www.linkedin.com/in/raymond-d-zegles" target="_blank" rel="noopener noreferrer" class="contact-link" role="listitem" aria-label="Visit LinkedIn profile (opens in new window)">
+                        <img src="images/linkedin-icon.png" alt="LinkedIn" class="contact-icon" aria-hidden="true">
                         <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/ValientTrail" target="_blank" rel="noopener noreferrer" class="contact-link" role="listitem" aria-label="Visit GitHub profile (opens in new window)">
+                        <span class="contact-icon-text" aria-hidden="true">⚙</span>
+                        <span>GitHub</span>
                     </a>
                 </div>
             </div>
@@ -163,10 +235,19 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Raymond Zegles. All rights reserved.</p>
-        <p>Let's create something amazing together!</p>
+        <div class="footer-content">
+            <p>&copy; 2026 Raymond Zegles. All rights reserved.</p>
+            <p>Let's create something amazing together!</p>
+        </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- EmailJS SDK v4 -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init('LZpHupCDEqjEunnOe');
+        })();
+    </script>
+    <script defer src="script.js"></script>
 </body>
 </html>
