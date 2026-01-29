@@ -243,7 +243,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize audio volume
     if (aboutAudio) {
-        aboutAudio.volume = 0.7;
+        aboutAudio.volume = 0.3;
     }
 
     // Play/Pause button event listener
